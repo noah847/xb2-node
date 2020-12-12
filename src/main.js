@@ -4,8 +4,12 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log('🚀服务已启动');
+})
+
+app.get('/', (req, res) => {
+    res.send('你好')
 })
 
 // const http = require('http')
