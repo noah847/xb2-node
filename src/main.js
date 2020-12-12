@@ -22,7 +22,7 @@ const data = [
         content: '会当凌绝顶，一览众山小'
     },
     {
-        id: 1,
+        id: 3,
         title: '忆江南',
         content: '日出江花红胜火，春来江水绿如蓝'
     },
@@ -32,3 +32,11 @@ app.get('/posts', (req, res) => {
     res.send(data)
 })
 
+app.get('/posts/:postId', (req, res) => {
+    const { postId } = req.params;
+    console.log(postId);
+    const targetData = data.filter(item => {
+        return item.id == postId;
+    })
+    res.send(targetData[0])
+})
